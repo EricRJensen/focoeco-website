@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/favicon_32.png">
 </head>
 <body>
   <header id="top">
@@ -81,41 +82,47 @@
       <h2>Where we focus our energy</h2>
       <p>Our projects blend policy advocacy, public education, and on-the-ground activation to protect habitat, restore waters, and expand equitable access to nature.</p>
       <div class="projects-grid">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🌿</div>
+        <article class="card" data-title="Nature in the City" data-img="img/focus_natureinthecity.png">
+          <img class="card-image" src="img/focus_natureinthecity.png" alt="Nature in the City illustration">
           <div class="bar"></div>
           <h3>Nature in the City</h3>
-          <p>Advance habitat-rich urban design—native plant cover, pollinator corridors, and greenspace in every neighborhood.</p>
+          <p>Promote urban planning and land use patterns that provide habitat and access to nature in all neighborhoods, regardless of socioeconomics.</p>
+          <p>Enable ecological protection outside urban cores, support wildlife habitat, native plant cover, pollinator gardens, bird collision mitigation, and lights-out initiatives.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🚋</div>
+        <article class="card" data-title="Climate-Smart Land Use" data-img="img/focus_landuse.png">
+          <img class="card-image" src="img/focus_landuse.png" alt="Climate-Smart Land Use illustration">
           <div class="bar"></div>
           <h3>Climate-Smart Land Use</h3>
-          <p>Champion walkable, transit-oriented growth that reduces emissions, water use, and sprawl while improving livability.</p>
+          <p>Support gentle, strategic density and transit-oriented development to enable walkability and bikeability and reduce sprawl, emissions, and municipal water use.</p>
+          <p>Create green space and agricultural areas within city limits to cut impervious surface, increase carbon sequestration, and cool the urban microclimate.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🌊</div>
+        <article class="card" data-title="Riverscape Health" data-img="img/focus_riverscape.png">
+          <img class="card-image" src="img/focus_riverscape.png" alt="Riverscape Health illustration">
           <div class="bar"></div>
           <h3>Riverscape Health</h3>
-          <p>Restore the Poudre—boost baseflows, partner on watershed-scale projects, and safeguard water quality.</p>
+          <p>Restore Poudre River habitats and water quality by maintaining baseflows, promoting watershed-scale restoration, and partnering with watershed organizations.</p>
+          <p>Advocate for sustainable and responsible use of local water resources under increasing regional climate challenges.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🌳</div>
+        <article class="card" data-title="Environmental Equity" data-img="img/focus_environmentalequity.png">
+          <img class="card-image" src="img/focus_environmentalequity.png" alt="Environmental Equity illustration">
           <div class="bar"></div>
           <h3>Environmental Equity</h3>
-          <p>Expand urban forestry, clean air programs, and hazard mitigation to ensure all residents benefit from a healthy city.</p>
+          <p>Address affordability-related exclusivity in Fort Collins through climate-smart land use and improve environmental equity via urban forestry and Nature in the City.</p>
+          <p>Advance equitable air quality programs and hazard mitigation so all residents can thrive.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🗳️</div>
+        <article class="card" data-title="Civic Engagement" data-img="img/focus_civicengagement.png">
+          <img class="card-image" src="img/focus_civicengagement.png" alt="Civic Engagement illustration">
           <div class="bar"></div>
           <h3>Civic Engagement</h3>
-          <p>Train emerging advocates to navigate civic processes, join boards, and lead on local environmental decisions.</p>
+          <p>Provide training and education on civic processes to prepare the next generation of environmental advocates.</p>
+          <p>Develop leaders ready to serve in local government and environmental organizations across Northern Colorado.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🤝</div>
+        <article class="card" data-title="Coalition Building" data-img="img/focus_coalitionbuilding.png">
+          <img class="card-image" src="img/focus_coalitionbuilding.png" alt="Coalition Building illustration">
           <div class="bar"></div>
           <h3>Coalition Building</h3>
-          <p>Partner with progressive organizations to educate, organize, and mobilize around key environmental policies.</p>
+          <p>Partner with local advocacy groups to organize events, provide public education, and advance progressive policy positions.</p>
+          <p>Build a broad, informed coalition that can mobilize around key issues and foster community among members.</p>
         </article>
       </div>
     </section>
@@ -196,6 +203,16 @@
       </div>
     </section>
   </main>
+
+  <div class="modal" id="focus-modal" role="dialog" aria-modal="true" aria-labelledby="focus-modal-title" aria-describedby="focus-modal-desc">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close dialog">×</button>
+      <img class="modal-image" src="" alt="" id="focus-modal-img">
+      <h3 id="focus-modal-title"></h3>
+      <p id="focus-modal-desc"></p>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-inner">

@@ -381,8 +381,8 @@ nav a:focus-visible::after {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
   margin-top: 28px;
 }
 
@@ -395,24 +395,30 @@ nav a:focus-visible::after {
   flex-direction: column;
   gap: 10px;
   border: 1px solid rgba(45, 95, 64, 0.05);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(45, 95, 64, 0.12), rgba(163, 92, 53, 0.14));
-  display: grid;
-  place-items: center;
-  font-size: 26px;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
-  align-self: flex-start;
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+.card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .card .bar {
   height: 6px;
   border-radius: 12px;
-  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  background: #5d7b82;
+  box-shadow: none;
 }
 
 .card h3 {
@@ -425,6 +431,70 @@ nav a:focus-visible::after {
 .card p {
   margin: 0;
   color: #4a4a4a;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  max-width: 640px;
+  width: min(640px, 92vw);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  display: grid;
+  gap: 12px;
+}
+
+.modal-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.modal-content h3 {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  color: var(--primary);
+}
+
+.modal-content p {
+  margin: 0;
+  color: #3f3f3f;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(0, 0, 0, 0.06);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .social {
@@ -617,6 +687,12 @@ footer {
   color: var(--primary);
 }
 
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   nav ul {
     display: none;
@@ -658,6 +734,10 @@ footer {
   }
 
   .about {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 
