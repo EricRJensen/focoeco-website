@@ -67,13 +67,13 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 700;
   color: var(--primary);
 }
 
 .brand img {
-  width: 64px;
+  width: 300px;
   height: auto;
 }
 
@@ -168,7 +168,7 @@ nav a:focus-visible::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(242, 240, 230, 0) 45%, rgba(242, 240, 230, 0.55) 70%, rgba(242, 240, 230, 0.95) 100%),
+    linear-gradient(90deg, rgba(242, 240, 230, 0) 0%, rgba(242, 240, 230, 0.30) 40%, rgba(242, 240, 230, 0.95) 70%),
     linear-gradient(180deg, rgba(242, 240, 230, 0) 0%, rgba(242, 240, 230, 0.12) 45%, rgba(242, 240, 230, 0.85) 100%);
 }
 
@@ -189,8 +189,8 @@ nav a:focus-visible::after {
 }
 
 .hero-copy h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.4rem, 3vw + 1rem, 3.4rem);
+  font-family: 'Roboto Slab', serif;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 2.8rem);
   margin: 0 0 16px;
   color: #f5f4ef;
   letter-spacing: -0.5px;
@@ -285,7 +285,7 @@ nav a:focus-visible::after {
 }
 
 .section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: clamp(1.8rem, 1.4vw + 1rem, 2.4rem);
   color: var(--primary);
   margin: 0 0 12px;
@@ -319,6 +319,13 @@ nav a:focus-visible::after {
   min-height: 260px;
   box-shadow: var(--shadow-card);
   isolation: isolate;
+}
+
+.about-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-visual::before {
@@ -359,6 +366,19 @@ nav a:focus-visible::after {
   color: var(--primary);
 }
 
+.section-divider {
+  max-width: calc(var(--max-width) + 120px);
+  margin: 0 auto 30px;
+  padding: 0 22px;
+}
+
+.section-divider img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -377,6 +397,18 @@ nav a:focus-visible::after {
   border: 1px solid rgba(45, 95, 64, 0.05);
 }
 
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(45, 95, 64, 0.12), rgba(163, 92, 53, 0.14));
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
+  align-self: flex-start;
+}
+
 .card .bar {
   height: 6px;
   border-radius: 12px;
@@ -384,7 +416,7 @@ nav a:focus-visible::after {
 }
 
 .card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 1.15rem;
   margin: 0;
   color: var(--primary);
@@ -432,7 +464,7 @@ nav a:focus-visible::after {
 
 .social-card h3 {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
   color: var(--primary);
 }
 
