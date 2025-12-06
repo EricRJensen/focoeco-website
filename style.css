@@ -507,9 +507,15 @@ nav a:focus-visible::after {
 }
 
 .social {
-  background: linear-gradient(180deg, rgba(198, 183, 135, 0.18), rgba(242, 240, 230, 0.7));
+  background:
+    linear-gradient(180deg, rgba(242, 240, 230, 0.7), rgba(198, 183, 135, 0.18)),
+    linear-gradient(rgba(242, 240, 230, 0.5), rgba(242, 240, 230, 0.5)),
+    url('img/images/topo.png');
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: cover, cover, 620px;
+  background-position: center, center, center;
   border-radius: 26px;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.20);
 }
 
 .social-grid {
@@ -589,10 +595,14 @@ nav a:focus-visible::after {
 }
 
 .contact {
-  background: #fff;
-  border-radius: 22px;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
+  background: linear-gradient(120deg, rgba(98, 144, 115, 0.82), rgba(124, 166, 92, 0.75)), url('img/lory.jpg') center/cover no-repeat;
+  color: var(--light-text);
+  border-radius: 0;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+  margin: 40px 0;
+  max-width: none;
+  width: 100%;
+  padding: 70px 22px;
 }
 
 .contact-grid {
@@ -600,6 +610,23 @@ nav a:focus-visible::after {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 26px;
   align-items: start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact h2 {
+  color: var(--light-text);
+}
+
+.contact p,
+.contact li,
+.contact .eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact .eyebrow {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .contact-list {
@@ -613,11 +640,17 @@ nav a:focus-visible::after {
 }
 
 .contact-card {
-  background: rgba(198, 183, 135, 0.14);
+  background: rgba(255, 255, 255, 0.14);
   border-radius: 16px;
   padding: 18px;
-  border: 1px solid rgba(45, 95, 64, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: var(--shadow-card);
+  color: var(--light-text);
+}
+
+.contact-card h3 {
+  margin: 0 0 6px;
+  color: var(--light-text);
 }
 
 .contact-form {
@@ -630,10 +663,16 @@ nav a:focus-visible::after {
 .contact-form input {
   padding: 12px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(45, 95, 64, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+  color: #1f2d22;
   min-width: 220px;
   font-size: 1rem;
   outline: none;
+}
+
+.contact-form input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .contact-form button {
