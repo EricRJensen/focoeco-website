@@ -1,0 +1,6 @@
+.DS_Store
+
+# PowerPoint files ignored since they are large and not relevant to the website codebase
+*.pptx
+FoCoECoLogo.pptx
+img/FoCoECoLogo.pptx

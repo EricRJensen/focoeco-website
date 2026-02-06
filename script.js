@@ -25,9 +25,7 @@ const modalDesc = document.getElementById('focus-modal-desc');
 const modalClose = document.querySelector('.modal-close');
 const modalBackdrop = document.querySelector('.modal-backdrop');
 
-const loremIpsum200 = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut libero in nibh porttitor faucibus. Integer vel lectus vel elit fermentum lacinia vitae vel est. Vivamus semper viverra nisi, at vulputate mauris malesuada nec. Aliquam erat volutpat. Sed eget luctus neque. Curabitur congue facilisis ipsum, ac faucibus erat varius et. Fusce maximus, justo at efficitur sodales, nisl odio fermentum velit, sed tempor magna mi quis massa. Cras fringilla, sapien id sagittis luctus, lorem augue tincidunt orci, at condimentum orci lacus id nulla. Sed faucibus lacus dolor, vitae condimentum eros dignissim id. Ut pulvinar urna vitae pellentesque posuere. Pellentesque a lorem tempor, sollicitudin neque quis, convallis sem. Praesent feugiat euismod faucibus. Mauris interdum ex id placerat efficitur. Nulla tincidunt sapien est, non facilisis nulla pellentesque eget. Duis faucibus ex vitae tortor facilisis, et euismod enim vehicula. Quisque vel lacinia mi, id ornare lacus. Integer blandit pulvinar leo, ut euismod purus convallis in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sit amet risus id mi condimentum vulputate. Donec aliquet, metus nec efficitur blandit, elit felis commodo ipsum, sit amet porta odio lorem in ipsum. Vestibulum tincidunt eros nec nulla gravida, non placerat neque hendrerit. Aenean at ligula vel dolor fermentum interdum. Curabitur id justo sit amet augue ultricies congue nec sed risus.`;
-
-const openModal = (title, imgSrc) => {
+const openModal = (title, imgSrc, description) => {
   if (imgSrc) {
     modalImg.src = imgSrc;
     modalImg.alt = `${title} illustration`;
@@ -38,7 +36,7 @@ const openModal = (title, imgSrc) => {
     modalImg.style.display = 'none';
   }
   modalTitle.textContent = title;
-  modalDesc.textContent = loremIpsum200;
+  modalDesc.textContent = description || '';
   modal.classList.add('is-open');
 };
 
@@ -48,9 +46,10 @@ const closeModal = () => {
 
 document.querySelectorAll('.projects-grid .card').forEach(card => {
   const handleOpen = () => {
-    const title = card.dataset.title || 'Focus Area';
+    const title = card.querySelector('h3')?.textContent?.trim() || card.dataset.title || 'Focus Area';
+    const description = card.querySelector('p')?.textContent?.trim() || '';
     const imgSrc = card.dataset.img || '';
-    openModal(title, imgSrc);
+    openModal(title, imgSrc, description);
   };
 
   card.setAttribute('tabindex', '0');
@@ -59,22 +58,6 @@ document.querySelectorAll('.projects-grid .card').forEach(card => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       handleOpen();
-    }
-  });
-});
-
-document.querySelectorAll('.about-list li').forEach(item => {
-  const open = () => {
-    const title = item.textContent.trim();
-    openModal(title, '');
-  };
-  item.setAttribute('tabindex', '0');
-  item.setAttribute('role', 'button');
-  item.addEventListener('click', open);
-  item.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      open();
     }
   });
 });

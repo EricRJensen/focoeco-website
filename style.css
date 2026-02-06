@@ -373,16 +373,6 @@ nav a:focus-visible::after {
   border-radius: 10px;
   font-weight: 600;
   color: var(--primary);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.about-list li:hover,
-.about-list li:focus-visible {
-  background: rgba(45, 95, 64, 0.12);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
-  outline: none;
 }
 
 .section-divider {
@@ -657,6 +647,7 @@ nav a:focus-visible::after {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: var(--shadow-card);
   color: var(--light-text);
+  margin-top: 52px;
 }
 
 .contact-card h3 {
@@ -664,29 +655,8 @@ nav a:focus-visible::after {
   color: var(--light-text);
 }
 
-.contact-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.contact-form input {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.18);
-  color: #1f2d22;
-  min-width: 220px;
-  font-size: 1rem;
-  outline: none;
-}
-
-.contact-form input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.contact-form button {
+.contact-link {
+  display: inline-block;
   background: var(--primary);
   color: var(--light-text);
   border: none;
@@ -696,10 +666,11 @@ nav a:focus-visible::after {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: var(--shadow-soft);
+  margin-top: 12px;
 }
 
-.contact-form button:hover,
-.contact-form button:focus-visible {
+.contact-link:hover,
+.contact-link:focus-visible {
   transform: translateY(-1px);
   background: #254d35;
   outline: none;
@@ -801,8 +772,12 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .contact-form {
-    flex-direction: column;
-    align-items: stretch;
+  .contact-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-card {
+    margin-top: 0;
   }
 }
