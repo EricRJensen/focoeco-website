@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "foco-eco": {
+      "hosting": {
+        "website": [
+          "foco-eco-website"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
