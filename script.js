@@ -135,8 +135,16 @@ const initPdfModal = () => {
   };
 
   cards.forEach(card => {
-    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('click', e => {
+      if (e.target instanceof Element && e.target.closest('a')) {
+        return;
+      }
+      openModal(card);
+    });
     card.addEventListener('keydown', e => {
+      if (e.target instanceof Element && e.target.closest('a')) {
+        return;
+      }
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openModal(card);

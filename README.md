@@ -17,7 +17,9 @@ Static website for **FoCo ECo (Fort Collins Environmental Collective)**.
 - Firebase target: `website`
 - Firebase project alias: `foco-eco`
 - Deploy source: repo root (`public: "."`)
-- SPA rewrite: all routes rewrite to `index.html`
+- Static-file hosting (no catch-all SPA rewrite)
+- Redirect: `/index.html` -> `/` (301)
+- Crawl files at root: `robots.txt`, `sitemap.xml`
 
 ## Redeploy
 

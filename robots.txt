@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foco-eco.org/sitemap.xml
