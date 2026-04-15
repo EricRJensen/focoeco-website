@@ -1128,10 +1128,26 @@ footer {
 @media (max-width: 640px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    text-align: left;
+    grid-template-areas:
+      "visual"
+      "copy";
+    text-align: center;
+  }
+
+  .hero-copy {
+    grid-area: copy;
+  }
+
+  .hero-copy h1 {
+    text-align: center;
+  }
+
+  .cta-row {
+    justify-content: center;
   }
 
   .hero-visual {
+    grid-area: visual;
     width: 100%;
   }
 
